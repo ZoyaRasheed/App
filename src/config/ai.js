@@ -1,10 +1,10 @@
 import config from './index.js';
 import { OpenAI } from 'openai';
 
-const aiClient = new OpenAI(config.ai.apiKey);
+const aiClient = new OpenAI({ apiKey: config.ai.apiKey, baseURL: config.ai.baseURL });
 
 const ai = async (systemPrompt, userPrompt) => {
-  const model = config.ai.apiKey;
+  const model = config.ai.model;
   try {
     const response = await aiClient.chat.completions.create({
       model,
