@@ -1,3 +1,3 @@
-const aiPrompt =  `Krti hun bhai`
+const systemPrompt = '';
 
-export default aiPrompt
+export default systemPrompt;

@@ -62,7 +62,7 @@ const config = {
       process.env.RESPONSE_ENCRYPTION_KEY || 'express-template-default-key-32',
     algorithm: 'aes-256-cbc',
   },
-  
+
   ai: {
     apiKey: process.env.GROQ_API_KEY,
   },

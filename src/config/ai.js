@@ -1,9 +1,9 @@
 import config from './index.js';
 import { OpenAI } from 'openai';
 
-const aiClient = new OpenAI(config.apiKey);
+const aiClient = new OpenAI(config.ai.apiKey);
 
-const ai = async (aiPrompt ) => {
+const ai = async (systemPrompt, userPrompt) => {
   const model = config.ai.apiKey;
   try {
     const response = await aiClient.chat.completions.create({
@@ -22,7 +22,6 @@ const ai = async (aiPrompt ) => {
 
     return response.choices[0].message.content;
   } catch (error) {
-    console.error(error);
     throw new Error(`AI request failed: ${error.message}`);
   }
 };
