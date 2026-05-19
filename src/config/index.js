@@ -58,8 +58,13 @@ const config = {
 
   encryption: {
     // WARNING: Change this default key in production! Set RESPONSE_ENCRYPTION_KEY in .env
-    key: process.env.RESPONSE_ENCRYPTION_KEY || 'express-template-default-key-32',
+    key:
+      process.env.RESPONSE_ENCRYPTION_KEY || 'express-template-default-key-32',
     algorithm: 'aes-256-cbc',
+  },
+  
+  ai: {
+    apiKey: process.env.GROQ_API_KEY,
   },
 };
 
@@ -71,6 +76,5 @@ for (const envVar of requiredEnvVars) {
 }
 
 console.log(`Configuration loaded for environment: ${config.env}`);
-
 
 export default config;
