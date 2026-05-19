@@ -3,8 +3,8 @@ import { OpenAI } from 'openai';
 
 const aiClient = new OpenAI(config.apiKey);
 
-const ai = async (systemPrompt, userPrompt, executors) => {
-  const model = config.ai.openai.model;
+const ai = async (aiPrompt ) => {
+  const model = config.ai.apiKey;
   try {
     const response = await aiClient.chat.completions.create({
       model,
